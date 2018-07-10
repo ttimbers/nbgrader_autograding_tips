@@ -5,6 +5,8 @@ Place to share tips/tricks/best practices for autograding
 
 ## Python
 
+### Check that a specific function or operator was used in a function definition
+
 Example to test that + operator was used in the add function:
 ```{python}
 import inspect
