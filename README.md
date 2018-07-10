@@ -58,6 +58,8 @@ print("success!")
 
 ```
 
+*note - I plan to write a wrapper function for `sha1(str(VARIABLE).encode('utf8')).hexdigest()` in Python so we can simplify this test*
+
 
 ### Check that a specific function or operator was used in a function definition
 
