@@ -31,6 +31,34 @@ print("Success!")
 
 ## Python
 
+### Hashing answers with R
+Example of using hashing to hide correct answer from students:
+
+Exercise 0.1. Now write some code that converts the time 5 hours and 30 minutes to that time in seconds. In doing this make sure you:
+  - create a variable called minutes_in_hour for the conversion factor of minutes to seconds
+  - save the answer to a variable called seconds
+
+```{python}
+from hashlib import sha1
+
+# convert 5 hours and 30 minutes to seconds
+hours = 5
+minutes = 30 
+
+### BEGIN SOLUTION
+minutes_in_hour = 60
+seconds = (minutes*seconds_in_minutes) + (hours*minutes_in_hour*seconds_in_minutes)
+### END SOLUTION
+
+print(seconds)
+
+
+assert sha1(str(seconds).encode('utf8')).hexdigest() == '10392a9ffe9156c31d2cc4c534a08cc43d76c2ad' # we hid the answer 
+print("success!")
+
+```
+
+
 ### Check that a specific function or operator was used in a function definition
 
 Example to test that + operator was used in the add function:
