@@ -29,9 +29,23 @@ print("Success!")
 
 *note - if you are hashing data frames that are from the tidyverse, convert them back to base data frames using `as.data.frame` before hashing so that things work nicely across computers (different versions of tidyverse make slightly different tibble objects...)*
 
+### Check that a specific function or operator was used in a function definition
+
+Example to test that + operator was used in the add function:
+```{r}
+add <- function(a, b){
+  return (a + b)
+}
+
+test_that('function should use + operator', {
+  expect_that(grepl("+", body(add)[2]), is_true())
+})
+print("Success!")
+```
+
 ## Python
 
-### Hashing answers with R
+### Hashing answers with Python
 Example of using hashing to hide correct answer from students:
 
 Exercise 0.1. Now write some code that converts the time 5 hours and 30 minutes to that time in seconds. In doing this make sure you:
