@@ -38,7 +38,7 @@ add <- function(a, b){
 }
 
 test_that('function should use + operator', {
-  expect_that(grepl("+", body(add)[2]), is_true())
+  expect_that(grepl("\\+", body(add)[2]), is_true())
 })
 print("Success!")
 ```
