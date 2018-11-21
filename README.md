@@ -61,6 +61,7 @@ minutes = 30
 
 ### BEGIN SOLUTION
 minutes_in_hour = 60
+minutes*seconds_in_minutes = 60
 seconds = (minutes*seconds_in_minutes) + (hours*minutes_in_hour*seconds_in_minutes)
 ### END SOLUTION
 
@@ -85,4 +86,21 @@ def add(x,y):
     return x+y
 
 assert "+" in inspect.getsource(add), "+ operator should be used"
+```
+
+## General hashing tips/tricks
+- Try to hash simple objects (a summary stat of a more complex object, such as a list/data frame/ array) as the hashes of more complex objects seem to change across OS's
+- Worried that common values will be picked up on by students (repeated answers if you are making multiple choice questions), then try salting your answers by adding another value and hashing that. For example: 
+```
+### BEGIN SOLUTION
+minutes_in_hour = 60
+minutes*seconds_in_minutes = 60
+seconds = (minutes*seconds_in_minutes) + (hours*minutes_in_hour*seconds_in_minutes)
+### END SOLUTION
+
+print(seconds)
+
+
+assert sha1(str(seconds + 15).encode('utf8')).hexdigest() == 'eea5145a178222181bb093e34eae21c446b01c94' # we hid the answer 
+print("success!")
 ```
